@@ -9,16 +9,16 @@ async fn api_tests() -> Result<()> {
     let user_add_test = hc.do_post(
         "/api/user/add",
         json!({
-            "first_name": "Natasha",
+            "first_name": "Jon",
             "surname": "Butterworth",
-            "username": "tasha87",
-            "email": "n.sellick@live.com",
-            "password": "freddiebum"
+            "username": "jonbut34",
+            "email": "jon@jonbut.com",
+            "password": "123"
         }));
     user_add_test.await?.print().await?;
 
     // let user_delete_test = hc.do_delete(
-    //     "/api/user/delete/n.sellick@live.com",
+    //     "/api/user/delete/jon@jonbut.com",
     //     );
     // user_delete_test.await?.print().await?;
 

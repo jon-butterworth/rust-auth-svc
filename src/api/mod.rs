@@ -1,9 +1,9 @@
-mod db_read;
-mod db_write;
-mod db_delete;
+mod get_user;
+mod create_user;
 pub(crate) mod error;
 mod store;
 mod login;
+mod delete_user;
 
 use std::net::SocketAddr;
 use axum::{Json, middleware, Router};
@@ -14,9 +14,9 @@ use serde_json::json;
 use ulid::Ulid;
 use crate::api::store::{new_db_pool, Db};
 pub use error::Error;
-use crate::api::db_delete::db_delete;
-use crate::api::db_read::db_read;
-use crate::api::db_write::add_user;
+use crate::api::get_user::db_read;
+use crate::api::create_user::add_user;
+use crate::api::delete_user::db_delete;
 use crate::api::store::Error::UnableToCreateDbPool;
 use crate::crypt;
 
